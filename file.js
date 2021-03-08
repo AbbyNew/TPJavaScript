@@ -21,6 +21,9 @@ let episode1=new episode(1, "Kiki, un chien bien sympathique ", 50, false) ;
 let episode2=new episode(2, "Kiki est parti faire pipi", 45, false) ;
 let episode3=new episode(3, "Kiki fait caca maintenant", 55, false) ;
 
+let listOfEpisodes = [episode1, episode2, episode3]
+
+let numeroEpisodeCourant = 2 ; 
 // ==========================================
 // Contantes
 const numberOfSecondsInAMinute = 60;
@@ -32,7 +35,7 @@ let paragraph = document.querySelector('#info');
 paragraph.innerText = `${numberOfSeasons} seasons, ${numberOfEpisodes} episodes per season, \n Total Time: ${totalVisulationTime} `;
 
 let infoEpisode = document.querySelector('#episode');
-infoEpisode.innerText = `Episode ${episode3.numEpisodeCourant} - ${episode3.episodeTitle} , Duration: ${episode3.episodeDuration}  ${episode3.hasBeenWatched ? '' : '\n NEW !!!'}`;
+infoEpisode.innerText = `Episode ${listOfEpisodes[numeroEpisodeCourant].numEpisodeCourant} - ${listOfEpisodes[numeroEpisodeCourant].episodeTitle} , Duration: ${listOfEpisodes[numeroEpisodeCourant].episodeDuration}  ${listOfEpisodes[numeroEpisodeCourant].hasBeenWatched ? '' : '\n NEW !!!'}`;
 
 const calculateButton = document.querySelector('#calculate-button');
 //const weeks= document.querySelector('#weeks');
