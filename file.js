@@ -6,6 +6,11 @@ let episodeTime = 45;
 let commercialTime = 5;
 let totalVisulationTime = (episodeTime + commercialTime) * numberOfEpisodes * numberOfSeasons;
 
+let numEpisodeCourant=5; 
+let episodeTitle ="La marche des démons"
+let episodeDuration = 55; 
+let hasBeenWatched = true; 
+
 // ==========================================
 // Contantes
 const numberOfSecondsInAMinute = 60;
@@ -15,6 +20,10 @@ const numberOfDaysInAWeek = 7;
 
 let paragraph = document.querySelector('#info');
 paragraph.innerText = `${numberOfSeasons} seasons, ${numberOfEpisodes} episodes per season, \n Total Time: ${totalVisulationTime} `;
+
+let infoEpisode = document.querySelector('#episode');
+infoEpisode.innerText = `Episode ${numEpisodeCourant} - ${episodeTitle} , Duration: ${episodeDuration}  ${hasBeenWatched ? '' : '\n NEW !!!'}`;
+
 
 const calculateButton = document.querySelector('#calculate-button');
 //const weeks= document.querySelector('#weeks');
