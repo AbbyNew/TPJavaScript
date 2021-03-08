@@ -6,16 +6,22 @@ let episodeTime = 45;
 let commercialTime = 5;
 let totalVisulationTime = (episodeTime + commercialTime) * numberOfEpisodes * numberOfSeasons;
 
-// Création d'un objet episode
-let episode = {
-	numEpisodeCourant:5, 
-	episodeTitle :"La marche des démons",
-	episodeDuration : 55, 
-	hasBeenWatched : false
+// Création d'une classe episode
+
+class episode {
+	constructor(numEpisodeCourant, episodeTitle, episodeDuration, hasBeenWatched) {
+		this.numEpisodeCourant=numEpisodeCourant; 
+		this.episodeTitle= episodeTitle;
+		this.episodeDuration=episodeDuration;  
+		this.hasBeenWatched=hasBeenWatched; 
+	}
 };
 
+let episode1=new episode(1, "Kiki, un chien bien sympathique ", 50, false) ;
+let episode2=new episode(2, "Kiki est parti faire pipi", 45, false) ;
+let episode3=new episode(3, "Kiki fait caca maintenant", 55, false) ;
 
-	// ==========================================
+// ==========================================
 // Contantes
 const numberOfSecondsInAMinute = 60;
 const numberOfMinutesInAnHour = 60;
@@ -26,7 +32,7 @@ let paragraph = document.querySelector('#info');
 paragraph.innerText = `${numberOfSeasons} seasons, ${numberOfEpisodes} episodes per season, \n Total Time: ${totalVisulationTime} `;
 
 let infoEpisode = document.querySelector('#episode');
-infoEpisode.innerText = `Episode ${episode.numEpisodeCourant} - ${episode.episodeTitle} , Duration: ${episode.episodeDuration}  ${episode.hasBeenWatched ? '' : '\n NEW !!!'}`;
+infoEpisode.innerText = `Episode ${episode3.numEpisodeCourant} - ${episode3.episodeTitle} , Duration: ${episode3.episodeDuration}  ${episode3.hasBeenWatched ? '' : '\n NEW !!!'}`;
 
 const calculateButton = document.querySelector('#calculate-button');
 //const weeks= document.querySelector('#weeks');
